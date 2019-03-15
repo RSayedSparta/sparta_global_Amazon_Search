@@ -20,6 +20,27 @@ namespace AmazonMVCv2.Controllers
             return View(db.Shippers.ToList());
         }
 
+        [HttpGet]
+        public ActionResult Search()
+        {
+            return View("Search");
+        }
+
+        [HttpPost]
+        public ActionResult Search(int? id)
+        {
+            if (id == null)
+            {
+                return View("Error");// new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Shipper shipper = db.Shippers.Find(id);
+            if (shipper == null)
+            {
+                return HttpNotFound();
+            }
+            return View("Details", shipper);
+        }
+
         // GET: Shippers/Details/5
         public ActionResult Details(int? id)
         {

@@ -281,6 +281,13 @@
     <Content Include="Views\Suppliers\Edit.cshtml" />
     <Content Include="Views\Suppliers\Index.cshtml" />
     <Content Include="Views\Catagories\Search.cshtml" />
+    <Content Include="Views\Customers\Search.cshtml" />
+    <Content Include="Views\OrderDetails\Search.cshtml" />
+    <Content Include="Views\Orders\Search.cshtml" />
+    <Content Include="Views\Payments\Search.cshtml" />
+    <Content Include="Views\Products\Search.cshtml" />
+    <Content Include="Views\Shippers\Search.cshtml" />
+    <Content Include="Views\Suppliers\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

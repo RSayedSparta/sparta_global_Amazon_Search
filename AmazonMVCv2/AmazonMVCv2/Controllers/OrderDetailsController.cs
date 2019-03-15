@@ -21,6 +21,27 @@ namespace AmazonMVCv2.Controllers
             return View(orderDetails.ToList());
         }
 
+        [HttpGet]
+        public ActionResult Search()
+        {
+            return View("Search");
+        }
+
+        [HttpPost]
+        public ActionResult Search(int? id)
+        {
+            if (id == null)
+            {
+                return View("Error");// new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            OrderDetail orderDetail = db.OrderDetails.Find(id);
+            if (orderDetail == null)
+            {
+                return HttpNotFound();
+            }
+            return View("Details", orderDetail);
+        }
+
         // GET: OrderDetails/Details/5
         public ActionResult Details(int? id)
         {

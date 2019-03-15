@@ -20,6 +20,27 @@ namespace AmazonMVCv2.Controllers
             return View(db.Payments.ToList());
         }
 
+        [HttpGet]
+        public ActionResult Search()
+        {
+            return View("Search");
+        }
+
+        [HttpPost]
+        public ActionResult Search(int? id)
+        {
+            if (id == null)
+            {
+                return View("Error");// new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Payment payment = db.Payments.Find(id);
+            if (payment == null)
+            {
+                return HttpNotFound();
+            }
+            return View("Details", payment);
+        }
+
         // GET: Payments/Details/5
         public ActionResult Details(int? id)
         {
