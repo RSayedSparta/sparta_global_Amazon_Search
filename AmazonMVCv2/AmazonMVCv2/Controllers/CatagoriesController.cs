@@ -20,10 +20,10 @@ namespace AmazonMVCv2.Controllers
             return View(db.Catagories.ToList());
         }
 
-        // GET: Search
+        [HttpGet]
         public ActionResult Search()
         {
-            return View(db.Catagories.ToList());
+            return View("Search");
         }
 
         [HttpPost]
@@ -38,7 +38,7 @@ namespace AmazonMVCv2.Controllers
             {
                 return HttpNotFound();
             }
-            return View(catagory);
+            return View("Details", catagory);
         }
 
 
