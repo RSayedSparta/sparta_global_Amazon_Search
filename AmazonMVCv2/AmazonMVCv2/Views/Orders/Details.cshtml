@@ -1,0 +1,58 @@
+﻿@model AmazonMVCv2.Order
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Orderdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Orderdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Payment.PaymentType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Payment.PaymentType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Shipper.CompanyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Shipper.CompanyName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OrdersID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

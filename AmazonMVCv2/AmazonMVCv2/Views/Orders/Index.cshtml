@@ -1,0 +1,57 @@
+﻿@model IEnumerable<AmazonMVCv2.Order>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Orderdate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Payment.PaymentType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shipper.CompanyName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Orderdate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Payment.PaymentType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Shipper.CompanyName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OrdersID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OrdersID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OrdersID })
+        </td>
+    </tr>
+}
+
+</table>
